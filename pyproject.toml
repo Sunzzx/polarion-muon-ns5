@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "polarion-muon-ns5"
+version = "0.1.0"
+description = "Polarion: Muon spectral optimizer via 5th-order Newton-Schulz polar decomposition, aspect-ratio scaling, Nesterov momentum, and hybrid AdamW routing for non-matrix parameters."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Ayush Kandwal", email = "ayushkandwal2007@gmail.com" }
+]
+keywords = [
+    "muon",
+    "optimizer",
+    "newton-schulz",
+    "polar-decomposition",
+    "deep-learning",
+    "matrix-orthogonalization",
+    "spectral-optimizer",
+]
+dependencies = [
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]
+
+[project.scripts]
+polarion = "polarion.cli:main"
+polarion-muon-ns5 = "polarion.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Sunzzx/polarion-muon-ns5"
+Repository = "https://github.com/Sunzzx/polarion-muon-ns5"
+Issues = "https://github.com/Sunzzx/polarion-muon-ns5/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["polarion"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
